@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Duepayments" targetNamespace="http://tempuri.org/Duepayments.xsd" xmlns:mstns="http://tempuri.org/Duepayments.xsd" xmlns="http://tempuri.org/Duepayments.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_AMSConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_AMSConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Apartment_Management_System.Properties.Settings.GlobalReference.Default.db_AMSConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_addPaymentTableAdapter" GeneratorDataComponentClassName="tbl_addPaymentTableAdapter" Name="tbl_addPayment" UserDataComponentName="tbl_addPaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_AMSConnectionString1 (Settings)" DbObjectName="db_AMS.dbo.tbl_addPayment" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        inv_dateandtime, cus_Fn, cus_title, cus_Ln, cus_nic, cus_contact, total_amount, pay_balance, OwnerID_TenantID_MaintenanceID, res_unitID
+FROM            tbl_addPayment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="inv_dateandtime" DataSetColumn="inv_dateandtime" />
+              <Mapping SourceColumn="cus_Fn" DataSetColumn="cus_Fn" />
+              <Mapping SourceColumn="cus_title" DataSetColumn="cus_title" />
+              <Mapping SourceColumn="cus_Ln" DataSetColumn="cus_Ln" />
+              <Mapping SourceColumn="cus_nic" DataSetColumn="cus_nic" />
+              <Mapping SourceColumn="cus_contact" DataSetColumn="cus_contact" />
+              <Mapping SourceColumn="total_amount" DataSetColumn="total_amount" />
+              <Mapping SourceColumn="pay_balance" DataSetColumn="pay_balance" />
+              <Mapping SourceColumn="OwnerID_TenantID_MaintenanceID" DataSetColumn="OwnerID_TenantID_MaintenanceID" />
+              <Mapping SourceColumn="res_unitID" DataSetColumn="res_unitID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Duepayments" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Duepayments" msprop:Generator_UserDSName="Duepayments">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_addPayment" msprop:Generator_TableClassName="tbl_addPaymentDataTable" msprop:Generator_TableVarName="tabletbl_addPayment" msprop:Generator_TablePropName="tbl_addPayment" msprop:Generator_RowDeletingName="tbl_addPaymentRowDeleting" msprop:Generator_RowChangingName="tbl_addPaymentRowChanging" msprop:Generator_RowEvHandlerName="tbl_addPaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_addPaymentRowDeleted" msprop:Generator_UserTableName="tbl_addPayment" msprop:Generator_RowChangedName="tbl_addPaymentRowChanged" msprop:Generator_RowEvArgName="tbl_addPaymentRowChangeEvent" msprop:Generator_RowClassName="tbl_addPaymentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inv_dateandtime" msprop:Generator_ColumnVarNameInTable="columninv_dateandtime" msprop:Generator_ColumnPropNameInRow="inv_dateandtime" msprop:Generator_ColumnPropNameInTable="inv_dateandtimeColumn" msprop:Generator_UserColumnName="inv_dateandtime" type="xs:dateTime" />
+              <xs:element name="cus_Fn" msprop:Generator_ColumnVarNameInTable="columncus_Fn" msprop:Generator_ColumnPropNameInRow="cus_Fn" msprop:Generator_ColumnPropNameInTable="cus_FnColumn" msprop:Generator_UserColumnName="cus_Fn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cus_title" msprop:Generator_ColumnVarNameInTable="columncus_title" msprop:Generator_ColumnPropNameInRow="cus_title" msprop:Generator_ColumnPropNameInTable="cus_titleColumn" msprop:Generator_UserColumnName="cus_title">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cus_Ln" msprop:Generator_ColumnVarNameInTable="columncus_Ln" msprop:Generator_ColumnPropNameInRow="cus_Ln" msprop:Generator_ColumnPropNameInTable="cus_LnColumn" msprop:Generator_UserColumnName="cus_Ln">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cus_nic" msprop:Generator_ColumnVarNameInTable="columncus_nic" msprop:Generator_ColumnPropNameInRow="cus_nic" msprop:Generator_ColumnPropNameInTable="cus_nicColumn" msprop:Generator_UserColumnName="cus_nic">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cus_contact" msprop:Generator_ColumnVarNameInTable="columncus_contact" msprop:Generator_ColumnPropNameInRow="cus_contact" msprop:Generator_ColumnPropNameInTable="cus_contactColumn" msprop:Generator_UserColumnName="cus_contact">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_amount" msprop:Generator_ColumnVarNameInTable="columntotal_amount" msprop:Generator_ColumnPropNameInRow="total_amount" msprop:Generator_ColumnPropNameInTable="total_amountColumn" msprop:Generator_UserColumnName="total_amount" type="xs:double" />
+              <xs:element name="pay_balance" msprop:Generator_ColumnVarNameInTable="columnpay_balance" msprop:Generator_ColumnPropNameInRow="pay_balance" msprop:Generator_ColumnPropNameInTable="pay_balanceColumn" msprop:Generator_UserColumnName="pay_balance" type="xs:double" />
+              <xs:element name="OwnerID_TenantID_MaintenanceID" msprop:Generator_ColumnVarNameInTable="columnOwnerID_TenantID_MaintenanceID" msprop:Generator_ColumnPropNameInRow="OwnerID_TenantID_MaintenanceID" msprop:Generator_ColumnPropNameInTable="OwnerID_TenantID_MaintenanceIDColumn" msprop:Generator_UserColumnName="OwnerID_TenantID_MaintenanceID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="res_unitID" msprop:Generator_ColumnVarNameInTable="columnres_unitID" msprop:Generator_ColumnPropNameInRow="res_unitID" msprop:Generator_ColumnPropNameInTable="res_unitIDColumn" msprop:Generator_UserColumnName="res_unitID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

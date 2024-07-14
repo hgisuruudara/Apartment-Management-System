@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2879F20F-DD64-42EF-80FC-3CF2C47C84FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Apartment_Management_System</RootNamespace>
+    <AssemblyName>Apartment Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>C:\Users\Isuru Udara\Desktop\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp">
+      <HintPath>C:\Users\Isuru Udara\Downloads\fontawesome.sharp.5.14.1\lib\net40\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apartment.cs" />
+    <Compile Include="AvailableResidentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvailableResidentReport.Designer.cs">
+      <DependentUpon>AvailableResidentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Duepayments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Duepayments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs" />
+    <Compile Include="frmAddApartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddApartment.Designer.cs">
+      <DependentUpon>frmAddApartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddResident.Designer.cs">
+      <DependentUpon>frmAddResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSecurityGuard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSecurityGuard.Designer.cs">
+      <DependentUpon>frmAddSecurityGuard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateAccount.Designer.cs">
+      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashBoardAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoardAdmin.Designer.cs">
+      <DependentUpon>frmDashBoardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashBoardClerkCashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoardClerkCashier.Designer.cs">
+      <DependentUpon>frmDashBoardClerkCashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashBoardManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoardManager.Designer.cs">
+      <DependentUpon>frmDashBoardManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDueReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDueReport.Designer.cs">
+      <DependentUpon>frmDueReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOwner.Designer.cs">
+      <DependentUpon>frmEditOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditTenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditTenant.Designer.cs">
+      <DependentUpon>frmEditTenant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIncomeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIncomeReport.Designer.cs">
+      <DependentUpon>frmIncomeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInvoicerpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoicerpt.Designer.cs">
+      <DependentUpon>frmInvoicerpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu_Admin.Designer.cs">
+      <DependentUpon>frmMainMenu_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu_Cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu_Cashier.Designer.cs">
+      <DependentUpon>frmMainMenu_Cashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu_Clerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu_Clerk.Designer.cs">
+      <DependentUpon>frmMainMenu_Clerk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu_Manager.Designer.cs">
+      <DependentUpon>frmMainMenu_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRequestMonthlyMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRequestMonthlyMaintain.Designer.cs">
+      <DependentUpon>frmRequestMonthlyMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewAccountDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewAccountDetails.Designer.cs">
+      <DependentUpon>frmViewAccountDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewApartmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewApartmentDetails.Designer.cs">
+      <DependentUpon>frmViewApartmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewHistory.Designer.cs">
+      <DependentUpon>frmViewHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewMaintainDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewMaintainDetails.Designer.cs">
+      <DependentUpon>frmViewMaintainDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewOwners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewOwners.Designer.cs">
+      <DependentUpon>frmViewOwners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewPayHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewPayHistory.Designer.cs">
+      <DependentUpon>frmViewPayHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewResidentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewResidentDetail.Designer.cs">
+      <DependentUpon>frmViewResidentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewSecDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewSecDetails.Designer.cs">
+      <DependentUpon>frmViewSecDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewTenants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewTenants.Designer.cs">
+      <DependentUpon>frmViewTenants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="incomeReport.cs">
+      <DependentUpon>incomeReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="incomeReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>incomeReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintanance.cs" />
+    <Compile Include="Owner.cs" />
+    <Compile Include="OwnerDetailsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnerDetailsReport.Designer.cs">
+      <DependentUpon>OwnerDetailsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resident.cs" />
+    <Compile Include="ResidentDetailsrpt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResidentDetailsrpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="Tenant.cs" />
+    <EmbeddedResource Include="AvailableResidentReport.rdlc" />
+    <EmbeddedResource Include="AvailableResidentReport.resx">
+      <DependentUpon>AvailableResidentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuePayments.rdlc" />
+    <EmbeddedResource Include="frmAddApartment.resx">
+      <DependentUpon>frmAddApartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddResident.resx">
+      <DependentUpon>frmAddResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSecurityGuard.resx">
+      <DependentUpon>frmAddSecurityGuard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateAccount.resx">
+      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashBoardAdmin.resx">
+      <DependentUpon>frmDashBoardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashBoardClerkCashier.resx">
+      <DependentUpon>frmDashBoardClerkCashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashBoardManager.resx">
+      <DependentUpon>frmDashBoardManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDueReport.resx">
+      <DependentUpon>frmDueReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOwner.resx">
+      <DependentUpon>frmEditOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditTenant.resx">
+      <DependentUpon>frmEditTenant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIncomeReport.resx">
+      <DependentUpon>frmIncomeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoicerpt.resx">
+      <DependentUpon>frmInvoicerpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu_Admin.resx">
+      <DependentUpon>frmMainMenu_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu_Cashier.resx">
+      <DependentUpon>frmMainMenu_Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu_Clerk.resx">
+      <DependentUpon>frmMainMenu_Clerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu_Manager.resx">
+      <DependentUpon>frmMainMenu_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRequestMonthlyMaintain.resx">
+      <DependentUpon>frmRequestMonthlyMaintain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewAccountDetails.resx">
+      <DependentUpon>frmViewAccountDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewApartmentDetails.resx">
+      <DependentUpon>frmViewApartmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewHistory.resx">
+      <DependentUpon>frmViewHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewMaintainDetails.resx">
+      <DependentUpon>frmViewMaintainDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewOwners.resx">
+      <DependentUpon>frmViewOwners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewPayHistory.resx">
+      <DependentUpon>frmViewPayHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewResidentDetail.resx">
+      <DependentUpon>frmViewResidentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewSecDetails.resx">
+      <DependentUpon>frmViewSecDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewTenants.resx">
+      <DependentUpon>frmViewTenants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="incomeReport.rdlc" />
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnerDetailsReport.rdlc" />
+    <EmbeddedResource Include="OwnerDetailsReport.resx">
+      <DependentUpon>OwnerDetailsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentInvoice.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Duepayments.xsc">
+      <DependentUpon>Duepayments.xsd</DependentUpon>
+    </None>
+    <None Include="Duepayments.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Duepayments.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Duepayments.xss">
+      <DependentUpon>Duepayments.xsd</DependentUpon>
+    </None>
+    <None Include="incomeReport.xsc">
+      <DependentUpon>incomeReport.xsd</DependentUpon>
+    </None>
+    <None Include="incomeReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>incomeReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="incomeReport.xss">
+      <DependentUpon>incomeReport.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\frmPayment.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResidentDetailsrpt.xsc">
+      <DependentUpon>ResidentDetailsrpt.xsd</DependentUpon>
+    </None>
+    <None Include="ResidentDetailsrpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResidentDetailsrpt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ResidentDetailsrpt.xss">
+      <DependentUpon>ResidentDetailsrpt.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\abcApartments-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart2008151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart20081511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speedometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-format %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-format.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jigsaw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-and-finance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeshowblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyeblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apartment %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\landlord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\privacy1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
